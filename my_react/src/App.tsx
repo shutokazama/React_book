@@ -7,6 +7,9 @@ import ForList from './chap03/ForList';
 import ForNest from './chap03/ForNest';
 import ForFilter from './chap03/ForFilter';
 import ForSort from './chap03/ForSort';
+import SelectStyle from './chap03/SelectStyle';
+import StyledPanel from './chap03/StyledPanel';
+import TitledPanel from './chap03/TitledPanel';
 
 function App() {
   return (
@@ -24,6 +27,18 @@ function App() {
       <h3>価格が安い順のリスト表示:ForFilter</h3>
       <ForFilter bookList={books} />
       <ForSort bookList={books} />
+      <h3>スタイルの切り替え:SelectStyle</h3>
+      <SelectStyle mode="dark" />
+      <StyledPanel>
+      <p>メンバー募集中!</p>
+      <p>ようこそ、WINGSプロジェクトへ!!</p>
+      {<MyHello myName="鈴木" />}
+      </StyledPanel>
+      <TitledPanel 
+        title={ <p>メンバー募集中！</p> }
+        body={ <p>ようこそ、WINGSプロジェクトへ!! </p>}>
+       </TitledPanel>;
+
     </div>
   )
 }
