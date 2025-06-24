@@ -10,6 +10,7 @@ import ForSort from './chap03/ForSort';
 import SelectStyle from './chap03/SelectStyle';
 import StyledPanel from './chap03/StyledPanel';
 import TitledPanel from './chap03/TitledPanel';
+import ListTemplate from './chap03/ListTemplate';
 
 function App() {
   return (
@@ -38,6 +39,18 @@ function App() {
         title={ <p>メンバー募集中！</p> }
         body={ <p>ようこそ、WINGSプロジェクトへ!! </p>}>
        </TitledPanel>;
+       <ListTemplate src={books}>
+           { elem => (
+             <>
+              <dt>
+                 <a href={`https://wings.msn.to/books/${elem.isbn}/${elem.isbn}.jpg`}>
+                    {elem.title}（{elem.price}円）
+                </a>
+              </dt>
+              <dd>{elem.summary}</dd>
+            </>
+         )}
+          </ListTemplate>
 
     </div>
   )
